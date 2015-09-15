@@ -15,4 +15,10 @@ describe(Places) do
       expect(test_place.name()).to(eq('Hawaii'))
     end
   end
+  
+  describe('.all') do
+    it('starts as an empty array.') do
+      expect(Places.all()).to(eq([]))
+    end
+  end
 end

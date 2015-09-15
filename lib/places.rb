@@ -11,4 +11,8 @@ class Places
   def description()
     @description
   end
+  
+  def self.all()
+    []
+  end
 end
