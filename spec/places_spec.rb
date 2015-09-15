@@ -20,5 +20,23 @@ describe(Places) do
     it('starts as an empty array.') do
       expect(Places.all()).to(eq([]))
     end
+    
+    it('returns all the places I have been to') do
+    end
+  end
+  
+  describe('#to_s') do
+    it('returns the name of the place, followed by its description') do
+      test_place = Places.new('Hawaii', 'Hey, this is just a test.')
+      expect(test_place.to_s()).to(eq('Hawaii: Hey, this is just a test.'))
+    end
+  end
+  
+  describe('#save') do
+    it('adds a place to the list of places that I have been to') do
+      test_place = Places.new('Hawaii', 'A cool description.')
+      test_place.save()
+      expect(Places.all().include?(test_place)).to(eq(true))
+    end
   end
 end

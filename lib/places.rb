@@ -1,4 +1,6 @@
 class Places
+  @@places = []
+  
   def initialize(name, description)
     @name = name
     @description = description
@@ -13,6 +15,14 @@ class Places
   end
   
   def self.all()
-    []
+    @@places
+  end
+  
+  def to_s()
+    "#{@name}: #{@description}"
+  end
+  
+  def save()
+    @@places.push(self)
   end
 end
