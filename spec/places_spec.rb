@@ -62,4 +62,12 @@ describe(Places) do
       expect(places[0].to_s()).to(eq("Sarajevo: This is a different description."))
     end
   end
+  
+  describe('#name=') do
+    it('sets the name of a place') do
+      test_place = Places.new("", "This place does not have a name.")
+      test_place.name=("Hawaii")
+      expect(test_place.name()).to(eq("Hawaii"))
+    end
+  end
 end

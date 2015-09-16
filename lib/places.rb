@@ -10,6 +10,10 @@ class Places
     @name
   end
   
+  def name=(name)
+    @name = name
+  end
+  
   def description()
     @description
   end
@@ -28,5 +32,10 @@ class Places
   
   def self.delete()
     @@places = []
+  end
+  
+  def self.edit(index, name, description)
+    @@places[index].name=(name)
+    @@places[index].description=(description) 
   end
 end
