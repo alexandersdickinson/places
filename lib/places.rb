@@ -18,6 +18,10 @@ class Places
     @description
   end
   
+  def description=(description)
+    @description = description
+  end
+  
   def self.all()
     @@places
   end

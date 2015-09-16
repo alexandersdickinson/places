@@ -18,6 +18,7 @@ end
 
 get('/edited') do
   @header = "Edited!"
+  Places.edit(params.fetch('entry number').to_i() - 1, params.fetch('name'), params.fetch('description'))
   erb(:success)
 end
 

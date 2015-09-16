@@ -70,4 +70,12 @@ describe(Places) do
       expect(test_place.name()).to(eq("Hawaii"))
     end
   end
+  
+  describe('#description=') do
+    it('sets the description of a place') do
+      test_place = Places.new("Hawaii", "")
+      test_place.description=("Now I have a description. What a relief.")
+      expect(test_place.description()).to(eq("Now I have a description. What a relief."))
+    end
+  end
 end
