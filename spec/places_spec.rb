@@ -2,6 +2,10 @@ require('rspec')
 require('places')
 
 describe(Places) do
+  before() do
+    Places.delete()
+  end
+  
   describe('#description') do
     it('returns the place\'s description') do
       test_place = Places.new('Hawaii', 'This place has a lot of mountains.')
@@ -37,6 +41,15 @@ describe(Places) do
       test_place = Places.new('Hawaii', 'A cool description.')
       test_place.save()
       expect(Places.all().include?(test_place)).to(eq(true))
+    end
+  end
+  
+  describe('.delete') do
+    it('deletes all entries from the class') do
+      test_place = Places.new("Hawaii", "This place has volcanoes.")
+      test_place.save()
+      Places.delete()
+      expect(Places.all()).to(eq([]))
     end
   end
 end

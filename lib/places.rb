@@ -25,4 +25,8 @@ class Places
   def save()
     @@places.push(self)
   end
+  
+  def self.delete()
+    @@places = []
+  end
 end
