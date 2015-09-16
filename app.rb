@@ -9,14 +9,14 @@ get('/') do
   erb(:form)
 end
 
-get('/success') do
+post('/success') do
   @header = "Success!"
   place = Places.new(params.fetch('name'), params.fetch('description'))
   place.save()
   erb(:success)
 end
 
-get('/edited') do
+post('/edited') do
   @header = "Edited!"
   Places.edit(params.fetch('entry number').to_i() - 1, params.fetch('name'), params.fetch('description'))
   erb(:success)
