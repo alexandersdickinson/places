@@ -52,4 +52,14 @@ describe(Places) do
       expect(Places.all()).to(eq([]))
     end
   end
+  
+  describe('.edit') do
+    it('edits the contents of one of the places entered by the user') do
+      test_place = Places.new("Hawaii", "This is a description.")
+      test_place.save()
+      Places.edit(0, "Sarajevo", "This is a different description.")
+      places = Places.all()
+      expect(places[0].to_s()).to(eq("Sarajevo: This is a different description."))
+    end
+  end
 end

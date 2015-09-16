@@ -29,7 +29,7 @@ describe('the edit path') do
     fill_in('description', :with => 'This is another description.')
     click_button('Add')
     click_link('Back')
-    click_button('Edit')
+    click_link('Edit')
     fill_in('entry number', :with => 2)
     fill_in('name', :with => 'Belgrade')
     fill_in('description', :with => 'This is a replacement description.')

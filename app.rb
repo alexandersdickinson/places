@@ -15,3 +15,13 @@ get('/success') do
   place.save()
   erb(:success)
 end
+
+get('/edited') do
+  @header = "Edited!"
+  erb(:success)
+end
+
+get('/edit') do
+  @header = 'Edit'
+  erb(:edit)
+end
